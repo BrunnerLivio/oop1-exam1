@@ -14,99 +14,99 @@ import org.junit.Test;
 
     @Test
     public void testBike() {
-        // String brand = "B1";
-        // int weight = 12305;
-        // Bike b = new Bike(brand, weight);
-        // assertEquals(brand, b.getBrand());
-        // assertEquals(weight, b.getWeight());
+        String brand = "B1";
+        int weight = 12305;
+        Bike b = new Bike(brand, weight);
+        assertEquals(brand, b.getBrand());
+        assertEquals(weight, b.getWeight());
     }
 
     @Test
     public void testEBike() {
-        // String brand = "B1";
-        // int weight = 1000;
-        // int wh = 200;
-        // EBike b = new EBike(brand, weight, wh);
-        // assertEquals(brand, b.getBrand());
-        // assertEquals(wh, b.getBatteryEnergy());
-        // assertEquals(weight + (wh * 5), b.getWeight());
+        String brand = "B1";
+        int weight = 1000;
+        int wh = 200;
+        EBike b = new EBike(brand, weight, wh);
+        assertEquals(brand, b.getBrand());
+        assertEquals(wh, b.getBatteryEnergy());
+        assertEquals(weight + (wh * 5), b.getWeight());
     }
 
     @Test
     public void testMountainBike() {
-        // String brand = "B1";
-        // int weight = 1000;
-        // boolean tubeless = true;
-        // MountainBike b = new MountainBike(brand, weight, tubeless);
-        // assertEquals(brand, b.getBrand());
-        // assertEquals(tubeless, b.isTubeless());
-        // assertEquals(weight - 200, b.getWeight());
+        String brand = "B1";
+        int weight = 1000;
+        boolean tubeless = true;
+        MountainBike b = new MountainBike(brand, weight, tubeless);
+        assertEquals(brand, b.getBrand());
+        assertEquals(tubeless, b.isTubeless());
+        assertEquals(weight - 200, b.getWeight());
     }
 
     @Test
     public void testBikeWeightFormatter1() {
-        // Bike b = new Bike("B1", 12315);
-        // String formattedWeight = b.getFormattedWeight();
-        // assertEquals("12kg 315gr", formattedWeight);
+        Bike b = new Bike("B1", 12315);
+        String formattedWeight = b.getFormattedWeight();
+        assertEquals("12kg 315gr", formattedWeight);
     }
 
     @Test
     public void testBikeInfo() {
-        // String brand = "B1";
-        // int weight = 12305;
-        // Bike b = new Bike(brand, weight);
-        // assertEquals("Brand: B1", b.getInfo());
+        String brand = "B1";
+        int weight = 12305;
+        Bike b = new Bike(brand, weight);
+        assertEquals("Brand: B1", b.getInfo());
     }
     
     @Test
     public void testMountainBikeInfo() {
-        // String brand = "B1";
-        // int weight = 12305;
-        // boolean tubeless = true;
-        // Bike b = new MountainBike(brand, weight, tubeless);
-        // assertEquals("Brand: B1 Tubeless", b.getInfo());
+        String brand = "B1";
+        int weight = 12305;
+        boolean tubeless = true;
+        Bike b = new MountainBike(brand, weight, tubeless);
+        assertEquals("Brand: B1 Tubeless", b.getInfo());
     }
 
     @Test
     public void testMountainBikeInfoTubes() {
-        // String brand = "B1";
-        // int weight = 12305;
-        // boolean tubeless = false;
-        // Bike b = new MountainBike(brand, weight, tubeless);
-        // assertEquals("Brand: B1 Tubes", b.getInfo());
+        String brand = "B1";
+        int weight = 12305;
+        boolean tubeless = false;
+        Bike b = new MountainBike(brand, weight, tubeless);
+        assertEquals("Brand: B1 Tubes", b.getInfo());
     }
 
     @Test
     public void testEBikeInfo() {
-        // String brand = "B1";
-        // int weight = 12305;
-        // int wh = 200;
-        // Bike b = new EBike(brand, weight, wh);
-        // assertEquals("e-Bike - Brand: B1 [200Wh]", b.getInfo());
+        String brand = "B1";
+        int weight = 12305;
+        int wh = 200;
+        Bike b = new EBike(brand, weight, wh);
+        assertEquals("e-Bike - Brand: B1 [200Wh]", b.getInfo());
     }
     
     @Test
     public void testBikeShopCapacity() {
-        // int capacity = 3;
-        // BikeShop bs = new BikeShop(capacity);
+        int capacity = 3;
+        BikeShop bs = new BikeShop(capacity);
 
-        // assertTrue(bs.addBike(new Bike("A", 0)));
-        // assertTrue(bs.addBike(new EBike("A", 0, 0)));
-        // assertTrue(bs.addBike(new MountainBike("A", 0, true)));
+        assertTrue(bs.addBike(new Bike("A", 0)));
+        assertTrue(bs.addBike(new EBike("A", 0, 0)));
+        assertTrue(bs.addBike(new MountainBike("A", 0, true)));
         
-        // assertFalse(bs.addBike(new EBike("A", 0, 0)));
+        assertFalse(bs.addBike(new EBike("A", 0, 0)));
     }
     
     @Test
     public void testBikeShopWeight() {
-        // BikeShop bs = new BikeShop(4);
+        BikeShop bs = new BikeShop(4);
         
-        // bs.addBike(new EBike("B1", 19500, 100));      
-        // bs.addBike(new MountainBike("A2", 10200, true)); 
+        bs.addBike(new EBike("B1", 19500, 100));      
+        bs.addBike(new MountainBike("A2", 10200, true)); 
 
-        // bs.addBike(new EBike("A3", 19000, 200));      
-        // bs.addBike(new Bike("A4", 10000));           
+        bs.addBike(new EBike("A3", 19000, 200));      
+        bs.addBike(new Bike("A4", 10000));           
 
-        // assertEquals(60000, bs.getTotalWeight());
+        assertEquals(60000, bs.getTotalWeight());
     }
 }
